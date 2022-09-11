@@ -5,8 +5,6 @@
  *
  * main - checks if positive, zero or negative
  *
- *
- *
  * Return: zero
  *
  */
