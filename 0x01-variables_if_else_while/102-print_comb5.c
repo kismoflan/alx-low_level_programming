@@ -1,47 +1,42 @@
 #include <stdio.h>
 /**
- * main - Prints numbers between 00 to 99.
+ * main - a simple program that outputs unordered
  *
- * Return: Always 0 (Success)
+ * combinations of two digit integers without duplicates
+ *
+ * Return: 0 on success
  */
 int main(void)
 {
-	int i, e, g, h, op1, op2;
+	int ifirst;
+	int i;
+	int jfirst;
+	int j;
 
-	i = e = g = h = 48;
-	while (h < 58)
+	for (ifirst = 48; ifirst < 58; ifirst++)
 	{
-		g = 48;
-		while (g < 58)
+		for (i = 48; i < 58; i++)
 		{
-			e = 48;
-			while (e < 58)
+			j = i + 1;
+			jfirst = ifirst;
+			for (; jfirst < 58; jfirst++)
 			{
-				i = 48;
-				while (i < 58)
+				for (; j < 58; j++)
 				{
-					op1 = (h * 10) + g;
-					op2 = (e * 10) + i;
-					if (op1 < op2)
+					putchar(ifirst);
+					putchar(i);
+					putchar(' ');
+					putchar(jfirst);
+					putchar(j);
+					if (ifirst != 57 || jfirst != 57 || i != 56 || j != 57)
 					{
-						putchar(h);
-						putchar(g);
+						putchar(',');
 						putchar(' ');
-						putchar(e);
-						putchar(i);
-						if (h == 57 && g == 56 && e == 57 && i == 57)
-					        {
-							putchar(',');
-							putchar(' ');
-						}
 					}
-					i++;
 				}
-				e++;
+				j = 48;
 			}
-			g++;
 		}
-		h++;
 	}
 	putchar('\n');
 	return (0);
