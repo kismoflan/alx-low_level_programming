@@ -1,22 +1,14 @@
 #include "main.h"
 /**
- * _strncpy - function with 3 argument
- *
- * @dest: char type pointer 1st argument
- * @src: char type pointer 2nd argument
- * @n: int type 3rd argument
- *
- * Description: copies a string
- *
+ * _strlen - return the length of a given stri
+ * @s: pointer to string to work on
  * Return: string
  */
-char *_strncpy(char *dest, char *src, int n)
+int _strlen(char *s)
 {
-	int i;
+	int len = 0;
 
-	for (i = 0; i < n && src[i] != '\0'; i++)
-	dest[i] = src[i];
-	for ( ; i < n; i++)
-	dest[i] = '\0';
-	return (dest);
+	while (*(s + len) != '\0')
+	len++;
+	return (len);
 }
