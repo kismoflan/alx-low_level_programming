@@ -1,26 +1,28 @@
 #include "main.h"
-
 /**
- * leet - encode
- * @s: pointer to char params
- * Return: *s
+ * _strncpy - copie the string
+ * @dest: array that returns
+ * @src: the pointer that receive the string
+ * @n: times to interate
+ *
+ * Return: the parameter dest.
  */
-
-char *leet(char *s)
+char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
-	int j;
-	char l[] = "ol_ea__t";
 
-	for (i = 0; s[i] != '\0'; i++)
+	i = 0;
+	while (i < n && src[i] != '\0')
 	{
-		for (j = 0; l[j] != '\0'; j++)
-		{
-			if (s[i] == l[j] || s[i] == (l[j] - 32))
-			{
-				s[i] = j + '0';
-			}
-		}
+		dest[i] = src[i];
+		i++;
 	}
-	return (s);
+
+	i = i;
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
