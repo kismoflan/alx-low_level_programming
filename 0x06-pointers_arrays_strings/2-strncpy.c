@@ -1,30 +1,26 @@
-#include "main.h"
+#include "holberton.h"
+
 /**
- * _strncpy - copie the string
- *
- * @dest: array that returns
- *
- * @src: the pointer that receive the string
- *
- * @n: times to interate
- *
- * Return: the parameter dest.
+ * leet - encode
+ * @s: pointer to char params
+ * Return: *s
  */
-char *_strncpy(char *dest, char *src, int n)
+
+char *leet(char *s)
 {
 	int i;
-	
-	i = 0;
-	while (i < n && src[i] != '\0')
+	int j;
+	char l[] = "ol_ea__t";
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		dest[i] = src[i];
-		i++;
+		for (j = 0; l[j] != '\0'; j++)
+		{
+			if (s[i] == l[j] || s[i] == (l[j] - 32))
+			{
+				s[i] = j + '0';
+			}
+		}
 	}
-	i = i;
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (s);
 }
