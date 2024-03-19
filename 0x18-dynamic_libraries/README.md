@@ -1,1 +1,1 @@
-0x18-dynamic_librarie
+0x18-dynamic_libraries
